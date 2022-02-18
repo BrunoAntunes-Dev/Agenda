@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DAO {
-	/**Modelo de conexão | PODE DAR ERRADO POR CAUSA DA VERSÃO DO DRIVER**/
+	/**Modelo de conexão**/
 	//parametros de conexão
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String url = "jdbc:mysql://127.0.0.1:3306/dbagenda?useTimezone=true&serverTimezone=UTC";
 	private String user = "root";
 	private String password = "totvs!133121";
 	
-	//metodo de conexão
+	//método de conexão
 	private Connection conectar() {
 		Connection con = null;
 		try {
@@ -24,7 +24,7 @@ public class DAO {
 		}
 	}
 	
-	//teste de conexão
+	/**teste de conexão
 	public void testeConexao() {
 		try {
 			Connection con = conectar();
@@ -33,5 +33,5 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
+	}**/
 }
