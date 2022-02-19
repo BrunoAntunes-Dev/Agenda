@@ -9,11 +9,11 @@
 	if(nome === ""){
 		alert('Preencha o campo Nome')
 		frmlContato.nome.focus()
-		return fase
+		return false
 	}else  if(fone === ""){
 		alert('Preencha o campo Fone')
 		frmlContato.nome.focus()
-		return fase
+		return false
 }else{
 	document.forms["frmContato"].submit()
 	}
