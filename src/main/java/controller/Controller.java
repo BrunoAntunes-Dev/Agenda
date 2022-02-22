@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -31,6 +31,8 @@ public class Controller extends HttpServlet {
 			contatos(request, response);
 		} else if (action.equals("/insert")) {
 			novoContato(request, response);
+		} else if (action.equals("/select")) {
+			listarContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -62,5 +64,20 @@ public class Controller extends HttpServlet {
 		dao.inserirContato(contato);
 		// redirecionar para o documento agenda.jsp
 		response.sendRedirect("main");
+	}
+	// Editar contato
+	protected void listarContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		// Recebimento do id do contato que será editado
+		String idcon = request.getParameter("idcon");
+		// setar a variavel JavaBeans
+		contato.setIdcon(idcon);
+		//  Executar o método selecionarContato (DAO)
+		dao.selecionarContato(contato);
+		// teste de recebimento
+		System.out.println(contato.getIdcon());
+		System.out.println(contato.getNome());
+		System.out.println(contato.getFone());
+		System.out.println(contato.getEmail());
 	}
 }
