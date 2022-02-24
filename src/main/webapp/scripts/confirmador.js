@@ -6,6 +6,6 @@
  function confirmar(idcon){
 	let resposta = confirm("Confirma a exclusão deste contato?")
 	if(resposta === true){
-		alert()
+		alert(idcon)
 	}
 }
