@@ -1,20 +1,21 @@
 /**
- * Validação de formulário
+ * Validar campos obrigatorios]
+ *
  *@author Bruno Antunes
  */
- 
- function validar(){
+
+function validar() {
 	let nome = frmContato.nome.value
 	let fone = frmContato.fone.value
-	if(nome === ""){
+	if (nome === "") {
 		alert('Preencha o campo Nome')
 		frmlContato.nome.focus()
 		return false
-	}else  if(fone === ""){
+	} else if (fone === "") {
 		alert('Preencha o campo Fone')
 		frmlContato.nome.focus()
 		return false
-}else{
-	document.forms["frmContato"].submit()
+	} else {
+		document.forms["frmContato"].submit()
 	}
 }
